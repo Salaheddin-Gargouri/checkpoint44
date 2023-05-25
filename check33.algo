@@ -1,0 +1,41 @@
+ALGORITHM checkpoint3
+PROCEDURE change(VAR xp, VAR yp : INTEGER)
+VAR
+   tmp,xp,yp : INTEGER;
+BEGIN
+  tmp := xp;
+  xp := yp;
+  yp := tmp;
+END
+VAR
+   i,j, : INTEGER;
+   tab: ARRAY_OF INTEGER;
+BEGIN
+   n := tab.length;                                         //longeur du tableux
+   FOR i FROM 0 TO n- 1 STEP 1  DO    
+           IF (tab[j] > tab[j+1]) THEN
+               change(tab[j], tab[j+1])
+           END_IF   
+   END_FOR
+   // l autre sense
+   FOR j FROM n- 1 TO 0  STEP 1  DO
+           IF (tab[j] > tab[j-1]) THEN
+               change(tab[j], tab[j-1])
+           END_IF   
+   END_FOR
+END
+
+
+ALGORITHM palindrome
+VAR
+word:STRING
+n: INTEGER
+BEGIN
+n: word.leghth
+IF (n<=1) THEN
+    write( this word palindrome)
+END_IF
+IF (word[0]=word[n-1]) THEN
+    word :=word ([1;-1])
+palindrome(word)
+END_IF
